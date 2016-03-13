@@ -73,7 +73,13 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)  {
         NSLog("%@が選択された", remindArray[indexPath.row])
         
-        table.cellForRowAtIndexPath(indexPath)?.imageView!.image = UIImage(named:"check.png")
+        if table.cellForRowAtIndexPath(indexPath)?.imageView!.image == UIImage(named: "矢印.png"){
+            table.cellForRowAtIndexPath(indexPath)?.imageView!.image = UIImage(named:"check.png")
+        }
+        else{
+            table.cellForRowAtIndexPath(indexPath)?.imageView!.image = UIImage(named:"矢印.png")
+        }
+        
         
         //var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         /* cell.imageView!.image = UIImage(named: "check.png")
